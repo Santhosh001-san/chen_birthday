@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advance Happy Birthday Chen Wa Qin 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="style.css?v=25" />
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div id="wipe"></div>
+
+<!-- ══════════════════════════════════════
+     SCENE 1: HERO
+══════════════════════════════════════ -->
+<section class="scene" id="s-hero">
+  <div class="hero-wrap">
+    <div class="glow-orb go-a"></div>
+    <div class="glow-orb go-b"></div>
+    <div class="eyebrow" id="h-eyebrow">
+      <span class="eb-line"></span>
+      <span>A message just for you</span>
+      <span class="eb-line"></span>
+    </div>
+    <h1 class="hero-h1">
+      <span id="word-happy" class="split-wrap">Advance Happy Birthday</span>
+      <span id="word-name" class="split-wrap hero-name">Chen Wa Qin</span>
+    </h1>
+    <p class="hero-p" id="h-sub">On this special day, the universe pauses just for you. 🌸</p>
+    <div class="gb-btn-wrap" id="h-btn">
+      <button class="gb-btn" onclick="revealCard(this)">
+        <span class="gb-btn__face"><span class="gb-btn__icon">🎁</span><span>Open Your Gift</span><span class="gb-btn__arr">↗</span></span>
+        <span class="gb-btn__ripple"></span>
+      </button>
+    </div>
+    <div class="floating-tags">
+      <span class="ft" style="--d:0s">🌸</span>
+      <span class="ft" style="--d:.6s">💫</span>
+      <span class="ft" style="--d:1.2s">❤️</span>
+      <span class="ft" style="--d:1.8s">✨</span>
+      <span class="ft" style="--d:2.4s">🎀</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SCENE 2: BIRTHDAY CARD
+══════════════════════════════════════ -->
+<section class="scene" id="s-card">
+  <button class="back-pill" onclick="goScene('s-hero', this)"><span>←</span> Back</button>
+  <div class="card-wrap">
+    <div class="bcard" id="bcard">
+      <div class="bcard__ribbon"></div>
+      <div class="bcard__cake-zone">
+        <div class="cake-glow"></div>
+        <div class="cake-pulse cp1"></div>
+        <div class="cake-pulse cp2"></div>
+        <span class="cake-em" id="cake-em">🎂</span>
+      </div>
+      <p class="bcard__eyebrow">✨ sent with all my love ✨</p>
+      <h2 class="bcard__title">Advance Happy<br><em>Birthday Chen Wa Qin!</em></h2>
+      <p class="bcard__sub">You're the sweetest friend who makes my heart smile, but deep down, I hope our beautiful friendship is just the first chapter of our love story... 💖</p>
+      <p class="bcard__body">Don't worry about the sadness you've faced. Today is <strong>YOUR</strong> day to shine bright and feel all the love in the universe. You deserve every bit of happiness in the world — I'm here to remind you how truly amazing you are!</p>
+      <p class="bcard__highlight">Let go of all worries. Embrace the beautiful soul you are. Here's to new beginnings, endless smiles, and unforgettable memories ahead! 💕</p>
+      <div class="bcard__emoji-row">❤️ &thinsp;💕&thinsp; 🎂 &thinsp;🍭&thinsp; 🎁</div>
+      <div class="gb-btn-wrap">
+        <button class="gb-btn gb-btn--rose" id="reveal-btn" onclick="heartReveal(this)">
+          <span class="gb-btn__face"><span class="gb-btn__icon">💌</span><span>See Your Surprises</span><span class="gb-btn__arr">↗</span></span>
+          <span class="gb-btn__ripple"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SHEET 1: COMPLIMENTS
+══════════════════════════════════════ -->
+<div class="sheet-bg" id="sh-compliments" onclick="bgClose(event,'sh-compliments')">
+  <div class="sheet">
+    <div class="sheet-notch"></div>
+    <button class="sheet-x" onclick="closeSheet('sh-compliments')">✕</button>
+
+    <!-- ✦ High-class romantic profile card ✦ -->
+    <div class="prof-card">
+      <div class="prof-card__bg-glow"></div>
+      <div class="prof-card__frame">
+        <div class="prof-card__ring"></div>
+        <img src="media__1779949997571.jpg"
+             alt="Chen Wa Qin" class="prof-card__img"
+             onmousemove="tilt3d(event,this)" onmouseleave="untilt(this)"
+             onclick="openProfileLightbox()" style="cursor: pointer;" />
+      </div>
+      <h3 class="prof-card__name">Chen Wa Qin</h3>
+      <div class="prof-card__divider"><span>✦</span></div>
+      <p class="prof-card__verse">"Every heart sings a song, incomplete, until another heart whispers back."</p>
+    </div>
+
+    <!-- ✦ Compliment cards — click for poetry ✦ -->
+    <p class="cmp-hint">✨ Tap a card to reveal your poem</p>
+    <div class="cmp-list">
+      <div class="cmp" data-n="0" onclick="openPoetry(0)">
+        <span class="cmp-icon">✨</span>
+        <span class="cmp-text">You light up every room you walk into!</span>
+        <span class="cmp-chevron">→</span>
+      </div>
+      <div class="cmp" data-n="1" onclick="openPoetry(1)">
+        <span class="cmp-icon">💛</span>
+        <span class="cmp-text">Your smile is contagious — pure gold!</span>
+        <span class="cmp-chevron">→</span>
+      </div>
+      <div class="cmp" data-n="2" onclick="openPoetry(2)">
+        <span class="cmp-icon">🌸</span>
+        <span class="cmp-text">The world is better because you're in it!</span>
+        <span class="cmp-chevron">→</span>
+      </div>
+      <div class="cmp" data-n="3" onclick="openPoetry(3)">
+        <span class="cmp-icon">💋</span>
+        <span class="cmp-text">You inspire everyone to be their best!</span>
+        <span class="cmp-chevron">→</span>
+      </div>
+      <div class="cmp" data-n="4" onclick="openPoetry(4)">
+        <span class="cmp-icon">❤️</span>
+        <span class="cmp-text">Your kindness makes such a difference!</span>
+        <span class="cmp-chevron">→</span>
+      </div>
+    </div>
+
+    <!-- Dynamic Bottom Button -->
+    <div class="gb-btn-wrap" style="margin-top: 24px;">
+      <button class="gb-btn gb-btn--rose" onclick="openLetterSheet(this)">
+        <span class="gb-btn__face"><span class="gb-btn__icon">💌</span><span>Click This</span><span class="gb-btn__arr">↗</span></span>
+        <span class="gb-btn__ripple"></span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SHEET: HEARTFELT LETTER TO CHEN WA QIN
+══════════════════════════════════════ -->
+<div class="sheet-bg" id="sh-letter" onclick="bgClose(event,'sh-letter')">
+  <div class="sheet sheet--tall">
+    <div class="sheet-notch"></div>
+    <button class="sheet-x" onclick="closeSheet('sh-letter')">✕</button>
+    
+    <div class="letter-container" style="padding: 10px; color: var(--txt); line-height: 1.8;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; background: linear-gradient(135deg, #fda4af, #f43f5e, #c084fc); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; margin-bottom: 24px;">My Dearest Friend</h3>
+      <div class="letter-body" style="font-size: 0.92rem; color: rgba(245, 240, 255, 0.85); text-align: justify; margin-bottom: 30px; font-family: 'DM Sans', sans-serif;">
+        <p style="margin-bottom: 16px;">I used to talk to you so casually at first, but I don't know what kind of magic you worked on me. Without even realizing it myself, I have fallen in love with you.</p>
+        <p style="margin-bottom: 16px;">In the beginning, you spoke with me so simply, but the kindness and affection you showed me afterward is something no one else has ever shown me. Nobody has ever called me handsome before, but you were the very first girl to call me handsome, right after my mother.</p>
+        <p style="margin-bottom: 16px;">Then, when you didn't come online for about 20 days, I felt extremely sad wondering why you weren't coming back. It was during that time of longing that I realized my love for you. I realized it only then.</p>
+        <p style="margin-bottom: 16px;">If you say no to me, it is not your fault at all. It is just my bad luck that seems to chase me constantly. I know that if I confess my love to you, you might not accept it, but still, I gathered all my courage from deep within and spoke my heart to you.</p>
+        <p style="margin-bottom: 16px;">It is completely okay. You only shared what you truly felt, and that is more than enough for me. But I will tell you one thing: you and only you will remain in my heart. No one else will ever occupy your place. I would rather die single in the end than forget you.</p>
+        <p style="margin-bottom: 16px;">Please do not think of this as me threatening you or just proposing randomly. These are words coming straight from the depth of my soul. Please take good care of your family and your health.</p>
+        <p style="margin-bottom: 16px;">If you ever want to know more about me, I have already sent you all my details in the message where you mentioned it was too difficult to read. Everything is right there.</p>
+        <p style="margin-bottom: 16px;">After you see this message, the choice is entirely yours. Even though I feel you might not love me back, I still must tell you: if you ever decide to love me, you must come to India, to Tamil Nadu. Yes, please come at least once and travel around our Tamil Nadu; you will get to know our land. By the time you see this message, I might have deleted this app. If I have said anything that hurt your heart, please forgive me.</p>
+        <p style="margin-bottom: 16px;">Take care of your health, eat your meals on time, and eat healthy foods. If I ever come to China, will you show me around your home and your country? I am looking forward to coming there just for that. I will definitely find you.</p>
+      </div>
+
+      <div class="chinese-poem" style="background: rgba(255, 255, 255, 0.04); border: 1px dashed rgba(244, 63, 94, 0.3); padding: 20px; border-radius: 16px; margin-top: 20px; text-align: center; font-family: 'Cormorant Garamond', serif;">
+        <h4 style="font-size: 1.3rem; color: #f43f5e; margin-bottom: 12px; font-style: italic;">🌸 寄予远方的歌 (Song to the Distance) 🌸</h4>
+        <p style="font-size: 1.15rem; color: #fda4af; line-height: 2; margin-bottom: 8px; letter-spacing: 2px;">
+          初言似水水长流，<br>
+          君意如星照小楼。<br>
+          莫道相思隔海远，<br>
+          天涯梦醒月悠悠。<br>
+          此生唯愿卿安好，<br>
+          万里清风寄温柔。<br>
+          若无卿伴迷行处，<br>
+          寂寞余生岂可期。<br>
+          与君笑谈忘物我，<br>
+          天外仙音拜瑶池。<br>
+          但得卿颜日展笑，<br>
+          蓬莱仙境在人间。
+        </p>
+        <p style="font-size: 0.78rem; color: rgba(253, 164, 175, 0.5); font-style: italic; margin-top: 10px;">
+          — Dedicated to my beautiful friend, Chen Wa Qin 💕
+        </p>
+      </div> <!-- Closes chinese-poem -->
+
+      <!-- Click This For Me Button -->
+      <div class="gb-btn-wrap" style="margin-top: 30px; margin-bottom: 10px;">
+        <button class="gb-btn gb-btn--rose" onclick="openValentineSheet(this)">
+          <span class="gb-btn__face">
+            <span class="gb-btn__icon">💖</span>
+            <span>Click This For Me</span>
+            <span class="gb-btn__arr">↗</span>
+          </span>
+          <span class="gb-btn__ripple"></span>
+        </button>
+      </div>
+
+    </div> <!-- Closes letter-container -->
+  </div> <!-- Closes sheet -->
+</div> <!-- Closes sh-letter -->
+
+<!-- ══════════════════════════════════════
+     SHEET: VALENTINE PROPOSAL
+     with Interactive 3D Teddy Bear Responses
+══════════════════════════════════════ -->
+<div class="sheet-bg" id="sh-valentine" onclick="bgClose(event,'sh-valentine')">
+  <div class="sheet sheet--tall" style="text-align: center; position: relative;">
+    <div class="sheet-notch"></div>
+    <button class="sheet-x" onclick="closeSheet('sh-valentine')">✕</button>
+
+    <h3 class="sh-title" style="font-family: 'Cormorant Garamond', serif; font-size: 2.3rem; margin-top: 15px; margin-bottom: 8px; font-weight: 700; background: linear-gradient(135deg, #fb7185, #f43f5e, #c084fc); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Will You Be My Valentine? 💖</h3>
+    <p style="font-size: 0.88rem; color: var(--txt2); margin-bottom: 24px;">Please listen to my heart's request... 🌹</p>
+
+    <!-- Interactive Teddy Bear Box -->
+    <div class="teddy-container" style="height: 180px; position: relative; margin: 20px 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <!-- 3D Teddy Bear SVG -->
+      <svg id="teddy-svg" viewBox="0 0 100 100" style="width: 130px; height: 130px; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3)); transform-origin: center bottom; position: absolute; left: 38%;">
+        <defs>
+          <radialGradient id="teddyBrown" cx="35%" cy="30%" r="65%">
+            <stop offset="0%" stop-color="#fcd34d" /> <!-- Warm honey/tan highlight -->
+            <stop offset="60%" stop-color="#b45309" /> <!-- Rich warm brown -->
+            <stop offset="100%" stop-color="#78350f" /> <!-- Shadow brown -->
+          </radialGradient>
+          <radialGradient id="teddyMuzzle" cx="40%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#fef3c7" />
+            <stop offset="100%" stop-color="#fde047" />
+          </radialGradient>
+          <radialGradient id="teddyBlush" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fda4af" />
+            <stop offset="100%" stop-color="#f43f5e" />
+          </radialGradient>
+        </defs>
+        
+        <!-- Ears -->
+        <g id="teddy-ears">
+          <circle cx="34" cy="30" r="10" fill="url(#teddyBrown)" />
+          <circle cx="34" cy="30" r="6" fill="#fef3c7" />
+          <circle cx="66" cy="30" r="10" fill="url(#teddyBrown)" />
+          <circle cx="66" cy="30" r="6" fill="#fef3c7" />
+        </g>
+        
+        <!-- Arms (for hugging) -->
+        <ellipse id="teddy-arm-l" cx="24" cy="62" rx="7" ry="12" fill="url(#teddyBrown)" transform="rotate(25, 24, 62)" />
+        <ellipse id="teddy-arm-r" cx="76" cy="62" rx="7" ry="12" fill="url(#teddyBrown)" transform="rotate(-25, 76, 62)" />
+        
+        <!-- Legs (for walking/standing) -->
+        <ellipse id="teddy-leg-l" cx="36" cy="85" rx="8" ry="11" fill="url(#teddyBrown)" />
+        <ellipse id="teddy-leg-r" cx="64" cy="85" rx="8" ry="11" fill="url(#teddyBrown)" />
+        
+        <!-- Chubby Body -->
+        <circle cx="50" cy="68" r="22" fill="url(#teddyBrown)" />
+        <ellipse cx="50" cy="72" rx="12" ry="10" fill="#fef3c7" opacity="0.8" /> <!-- Belly patch -->
+        
+        <!-- Head -->
+        <circle cx="50" cy="45" r="18" fill="url(#teddyBrown)" />
+        
+        <!-- Blushing cheeks -->
+        <circle id="teddy-blush-l" cx="38" cy="50" r="3" fill="url(#teddyBlush)" opacity="0.5" />
+        <circle id="teddy-blush-r" cx="62" cy="50" r="3" fill="url(#teddyBlush)" opacity="0.5" />
+        
+        <!-- Eyes (Expressive) -->
+        <g id="teddy-eyes">
+          <circle id="teddy-eye-l" cx="42" cy="42" r="2" fill="#291305" />
+          <circle id="teddy-eye-r" cx="58" cy="42" r="2" fill="#291305" />
+          <!-- Glint -->
+          <circle id="teddy-glint-l" cx="41.2" cy="41.2" r="0.6" fill="#ffffff" />
+          <circle id="teddy-glint-r" cx="57.2" cy="41.2" r="0.6" fill="#ffffff" />
+          
+          <!-- Crying Tears (hidden by default) -->
+          <path id="teddy-tears" d="M42 44 C40 54 44 54 42 44 M58 44 C56 54 60 54 58 44" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" style="display: none;" />
+        </g>
+        
+        <!-- Snout / Nose -->
+        <ellipse cx="50" cy="49" rx="6" ry="4" fill="url(#teddyMuzzle)" />
+        <ellipse cx="50" cy="47.5" rx="2" ry="1.2" fill="#291305" /> <!-- Nose tip -->
+        <!-- Cute Smile / Sad mouth -->
+        <path id="teddy-mouth" d="M47 50 Q50 52 53 50" fill="none" stroke="#291305" stroke-width="1" stroke-linecap="round" />
+        <path id="teddy-mouth-sad" d="M47 52 Q50 49 53 52" fill="none" stroke="#291305" stroke-width="1" stroke-linecap="round" style="display: none;" />
+      </svg>
+
+      <!-- 3D Girly Teddy Bear SVG (Pink with a Red Bow) -->
+      <svg id="teddy-girl-svg" viewBox="0 0 100 100" style="width: 130px; height: 130px; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3)); transform-origin: center bottom; display: none; position: absolute; left: 48%; opacity: 0;">
+        <defs>
+          <radialGradient id="teddyPink" cx="35%" cy="30%" r="65%">
+            <stop offset="0%" stop-color="#fee2e2" /> <!-- Light pink highlight -->
+            <stop offset="60%" stop-color="#f472b6" /> <!-- Soft pink midtone -->
+            <stop offset="100%" stop-color="#db2777" /> <!-- Shadow deep pink -->
+          </radialGradient>
+          <radialGradient id="teddyGirlMuzzle" cx="40%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#ffe4e6" />
+          </radialGradient>
+          <radialGradient id="teddyRedBow" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#fca5a5" />
+            <stop offset="60%" stop-color="#ef4444" />
+            <stop offset="100%" stop-color="#b91c1c" />
+          </radialGradient>
+        </defs>
+        
+        <!-- Ears -->
+        <g id="teddy-girl-ears">
+          <circle cx="34" cy="30" r="10" fill="url(#teddyPink)" />
+          <circle cx="34" cy="30" r="6" fill="#ffe4e6" />
+          <circle cx="66" cy="30" r="10" fill="url(#teddyPink)" />
+          <circle cx="66" cy="30" r="6" fill="#ffe4e6" />
+        </g>
+        
+        <!-- Red Bow on left ear -->
+        <g id="teddy-girl-bow" transform="translate(24, 20) scale(0.65)">
+          <path d="M-8 -6 C-2 -12 8 -12 14 -6 L0 0 Z" fill="url(#teddyRedBow)" />
+          <path d="M8 -6 C2 -12 -8 -12 -14 -6 L0 0 Z" fill="url(#teddyRedBow)" />
+          <circle cx="0" cy="-3" r="3.5" fill="#ef4444" stroke="#b91c1c" stroke-width="0.5" />
+        </g>
+        
+        <!-- Arms -->
+        <ellipse id="teddy-girl-arm-l" cx="24" cy="62" rx="7" ry="12" fill="url(#teddyPink)" transform="rotate(25, 24, 62)" />
+        <ellipse id="teddy-girl-arm-r" cx="76" cy="62" rx="7" ry="12" fill="url(#teddyPink)" transform="rotate(-25, 76, 62)" />
+        
+        <!-- Legs -->
+        <ellipse id="teddy-girl-leg-l" cx="36" cy="85" rx="8" ry="11" fill="url(#teddyPink)" />
+        <ellipse id="teddy-girl-leg-r" cx="64" cy="85" rx="8" ry="11" fill="url(#teddyPink)" />
+        
+        <!-- Chubby Body -->
+        <circle cx="50" cy="68" r="22" fill="url(#teddyPink)" />
+        <ellipse cx="50" cy="72" rx="12" ry="10" fill="#ffe4e6" opacity="0.8" /> <!-- Belly patch -->
+        
+        <!-- Head -->
+        <circle cx="50" cy="45" r="18" fill="url(#teddyPink)" />
+        
+        <!-- Blushing cheeks -->
+        <circle cx="38" cy="50" r="3" fill="#f43f5e" opacity="0.4" />
+        <circle cx="62" cy="50" r="3" fill="#f43f5e" opacity="0.4" />
+        
+        <!-- Eyes -->
+        <circle cx="42" cy="42" r="2" fill="#291305" />
+        <circle cx="58" cy="42" r="2" fill="#291305" />
+        <circle cx="41.2" cy="41.2" r="0.6" fill="#ffffff" />
+        <circle cx="57.2" cy="41.2" r="0.6" fill="#ffffff" />
+        
+        <!-- Snout / Nose -->
+        <ellipse cx="50" cy="49" rx="6" ry="4" fill="url(#teddyGirlMuzzle)" />
+        <ellipse cx="50" cy="47.5" rx="2" ry="1.2" fill="#291305" />
+        <path d="M47 50 Q50 52 53 50" fill="none" stroke="#291305" stroke-width="1" stroke-linecap="round" />
+      </svg>
+      
+      <!-- Speech bubble inside container -->
+      <div id="teddy-bubble" class="animal-bubble" style="top: 0; font-size: 0.85rem; padding: 6px 12px; display: none;">Hello! 🧸</div>
+    </div>
+
+    <!-- Teddy Bear Text Log -->
+    <div id="teddy-text-log" style="min-height: 50px; margin: 10px auto 25px; padding: 12px 18px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px dashed rgba(244,63,94,0.15); max-width: 400px; font-size: 0.88rem; line-height: 1.6; color: rgba(245,240,255,0.9); font-style: italic;">
+      Please give me your answer... 🧸💖
+    </div>
+
+    <!-- Proposal Action Buttons -->
+    <div class="val-btn-wrap" style="display: flex; gap: 20px; justify-content: center; margin-top: 15px;">
+      <button class="gb-btn" style="--grad: linear-gradient(135deg, #34d399, #10b981, #047857);" onclick="handleValentineResponse(true, this)">
+        <span class="gb-btn__face" style="padding: 10px 30px;"><span class="gb-btn__icon">🌸</span><span>YES</span></span>
+        <span class="gb-btn__ripple"></span>
+      </button>
+      <button class="gb-btn gb-btn--rose" onclick="handleValentineResponse(false, this)">
+        <span class="gb-btn__face" style="padding: 10px 30px;"><span class="gb-btn__icon">🥺</span><span>NO</span></span>
+        <span class="gb-btn__ripple"></span>
+      </button>
+    </div>
+
+    <!-- Watch This Movies For Me Button -->
+    <div class="gb-btn-wrap" style="margin-top: 25px; margin-bottom: 5px;">
+      <button class="gb-btn" style="--grad: linear-gradient(135deg, #c084fc, #a855f7, #7e22ce);" onclick="openSheet('sh-movies-recommendations')">
+        <span class="gb-btn__face" style="padding: 8px 24px;">
+          <span class="gb-btn__icon">🎬</span>
+          <span>Watch This Movies For Me</span>
+          <span class="gb-btn__arr">↗</span>
+        </span>
+        <span class="gb-btn__ripple"></span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SHEET: MOVIES RECOMMENDATIONS
+     "You should have to watch this movies for me please"
+     26 Blockbuster Tamil Movies (2000 - 2026)
+     with premium cards and click animations
+ ══════════════════════════════════════ -->
+<div class="sheet-bg" id="sh-movies-recommendations" onclick="bgClose(event,'sh-movies-recommendations')">
+  <div class="sheet sheet--tall" style="position: relative; max-width: 480px;">
+    <div class="sheet-notch"></div>
+    <button class="sheet-x" onclick="closeSheet('sh-movies-recommendations')">✕</button>
+
+    <h3 class="sh-title" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; text-align: center; margin-top: 15px; margin-bottom: 8px; font-weight: 700; background: linear-gradient(135deg, #fda4af, #f43f5e, #c084fc); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding: 0 10px; line-height: 1.3;">You should have to watch this movies for me please 🎬🍿</h3>
+    <p style="font-size: 0.82rem; color: rgba(245, 240, 255, 0.7); text-align: center; margin-bottom: 20px; font-family: 'DM Sans', sans-serif;">Here is a list of 26 legendary Tamil blockbuster movies (2000 - 2026) in all genres. Click a card to read its story! 🌟</p>
+
+    <!-- Scrollable movie cards list -->
+    <div class="movies-scroll-area" style="max-height: 380px; overflow-y: auto; padding: 5px; display: flex; flex-direction: column; gap: 12px; border-radius: 12px; scrollbar-width: thin; scrollbar-color: rgba(244,63,94,0.3) rgba(255,255,255,0.02);">
+      
+      <!-- Movie 1: Karuppu -->
+      <div class="movie-card" onclick="playMovieAnimation('karuppu')" style="background: rgba(244, 63, 94, 0.08); border: 1.5px solid rgba(244, 63, 94, 0.4); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(244, 63, 94, 0.15);">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🎬</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.15rem; color: #fff; font-weight: 600;">Karuppu</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: #fda4af; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Action / Thriller • 2026</p>
+          <span style="display: inline-block; background: linear-gradient(135deg, #f43f5e, #be123c); color: #fff; font-size: 0.7rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; margin-top: 6px; letter-spacing: 0.5px; box-shadow: 0 2px 10px rgba(244,63,94,0.3);">🔥 Currently in Theatres!</span>
+        </div>
+        <span style="color: #fda4af; font-size: 1.2rem; opacity: 0.8;">→</span>
+      </div>
+
+      <!-- Movie 2: Leo -->
+      <div class="movie-card" onclick="playMovieAnimation('leo')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">⚔️</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Leo</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Thriller • 2023</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 3: Ponniyin Selvan: I & II -->
+      <div class="movie-card" onclick="playMovieAnimation('ponniyin_selvan')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">👑</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Ponniyin Selvan: I & II</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Historical Epic • 2022-2023</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 4: Vikram -->
+      <div class="movie-card" onclick="playMovieAnimation('vikram')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🦅</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Vikram</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Thriller • 2022</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 5: Jai Bhim -->
+      <div class="movie-card" onclick="playMovieAnimation('jai_bhim')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">⚖️</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Jai Bhim</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Legal / Social Drama • 2021</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 6: Soorarai Pottru -->
+      <div class="movie-card" onclick="playMovieAnimation('soorarai_pottru')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">✈️</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Soorarai Pottru</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Drama / Biography • 2020</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 7: Asuran -->
+      <div class="movie-card" onclick="playMovieAnimation('asuran')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🌾</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Asuran</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Drama • 2019</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 8: 96 -->
+      <div class="movie-card" onclick="playMovieAnimation('movies_96')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">💛</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">96</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Romance / Nostalgia • 2018</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 9: Ratchasan -->
+      <div class="movie-card" onclick="playMovieAnimation('ratsasan')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🕵️</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Ratchasan</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Psychological Thriller • 2018</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 10: Mersal -->
+      <div class="movie-card" onclick="playMovieAnimation('mersal')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🎩</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Mersal</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Social Masala • 2017</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 11: Vikram Vedha -->
+      <div class="movie-card" onclick="playMovieAnimation('vikram_vedha')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">☯️</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Vikram Vedha</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Neo-Noir Thriller • 2017</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 12: Theri -->
+      <div class="movie-card" onclick="playMovieAnimation('theri')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">👮🏽</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Theri</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Family Drama • 2016</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 13: Thani Oruvan -->
+      <div class="movie-card" onclick="playMovieAnimation('thani_oruvan')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🧠</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Thani Oruvan</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Mind Game • 2015</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 14: Kaththi -->
+      <div class="movie-card" onclick="playMovieAnimation('kaththi')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">💡</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Kaththi</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Social Drama • 2014</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 15: Soodhu Kavvum -->
+      <div class="movie-card" onclick="playMovieAnimation('soodhu_kavvum')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🍍</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Soodhu Kavvum</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Black Comedy / Crime • 2013</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 16: Thuppakki -->
+      <div class="movie-card" onclick="playMovieAnimation('thuppakki')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🔫</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Thuppakki</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Military Thriller • 2012</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 17: 7 Aum Arivu -->
+      <div class="movie-card" onclick="playMovieAnimation('7_aum_arivu')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🧬</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">7 Aum Arivu</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Sci-Fi / Martial Arts • 2011</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 18: Mankatha -->
+      <div class="movie-card" onclick="playMovieAnimation('mankatha')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">💵</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Mankatha</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Heist • 2011</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 19: Aayirathil Oruvan -->
+      <div class="movie-card" onclick="playMovieAnimation('aayirathil_oruvan')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🏺</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Aayirathil Oruvan</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Adventure / Fantasy • 2010</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 20: Enthiran -->
+      <div class="movie-card" onclick="playMovieAnimation('enthiran')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🤖</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Enthiran</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Sci-Fi / Action • 2010</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 21: Vinnaithaandi Varuvaayaa -->
+      <div class="movie-card" onclick="playMovieAnimation('vtv')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">💙</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Vinnaithaandi Varuvaayaa</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Classic Romance • 2010</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 22: Ayan -->
+      <div class="movie-card" onclick="playMovieAnimation('ayan')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">💎</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Ayan</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Adventure • 2009</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 23: Sivaji: The Boss -->
+      <div class="movie-card" onclick="playMovieAnimation('sivaji')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🦁</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Sivaji: The Boss</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Action / Social Masala • 2007</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 24: Ghilli -->
+      <div class="movie-card" onclick="playMovieAnimation('ghilli')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🏆</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Ghilli</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Sports / Romance / Action • 2004</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 25: Anniyan -->
+      <div class="movie-card" onclick="playMovieAnimation('anniyan')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">🎭</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Anniyan</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Psychological Thriller / Action • 2005</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+      <!-- Movie 26: Alaipayuthey -->
+      <div class="movie-card" onclick="playMovieAnimation('alaipayuthey')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease;">
+        <div style="font-size: 2.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));">💖</div>
+        <div style="flex-grow: 1; text-align: left;">
+          <h4 style="margin: 0; font-size: 1.05rem; color: #fff; font-weight: 500;">Alaipayuthey</h4>
+          <p style="margin: 3px 0 0 0; font-size: 0.78rem; color: rgba(245, 240, 255, 0.6);">Romantic / Family Drama • 2000</p>
+        </div>
+        <span style="color: rgba(245, 240, 255, 0.4); font-size: 1.2rem;">→</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .movie-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .movie-card:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(244, 63, 94, 0.5) !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(244, 63, 94, 0.15) !important;
+  }
+  .movies-scroll-area::-webkit-scrollbar {
+    width: 6px;
+  }
+  .movies-scroll-area::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.01);
+  }
+  .movies-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(244, 63, 94, 0.3);
+    border-radius: 9999px;
+  }
+  .movies-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: rgba(244, 63, 94, 0.5);
+  }
+</style>
+
+<!-- CINEMATIC MOVIE DETAILS & CLAPPER OVERLAY -->
+<div id="movie-anim-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(8, 4, 15, 0.94); z-index: 10000; display: none; align-items: center; justify-content: center; opacity: 0; pointer-events: none; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+  <div id="clapperboard-wrap" style="transform: scale(0.5); opacity: 0; text-align: center; color: white; width: 90%; max-width: 400px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+    
+    <!-- 3D Clapperboard SVG -->
+    <svg width="150" height="150" viewBox="0 0 100 100" style="filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); overflow: visible; display: block; margin: 0 auto; flex-shrink: 0;">
+      <!-- Clapper Bottom -->
+      <rect x="15" y="45" width="70" height="40" rx="3" fill="#1e1b4b" stroke="#312e81" stroke-width="1.5" />
+      <!-- Strips on Bottom -->
+      <path d="M20 45 L30 45 L25 55 L15 55 Z" fill="#ffffff" opacity="0.15" />
+      <path d="M40 45 L50 45 L45 55 L35 55 Z" fill="#ffffff" opacity="0.15" />
+      <path d="M60 45 L70 45 L65 55 L55 55 Z" fill="#ffffff" opacity="0.15" />
+      <path d="M80 45 L85 45 L85 55 L75 55 Z" fill="#ffffff" opacity="0.15" />
+      
+      <!-- Clapper Top -->
+      <g id="clapper-top" style="transform-origin: 15px 45px;">
+        <rect x="15" y="32" width="70" height="12" rx="2" fill="#1e1b4b" stroke="#312e81" stroke-width="1" />
+        <path d="M25 32 L35 32 L30 44 L20 44 Z" fill="#ffffff" opacity="0.25" />
+        <path d="M45 32 L55 32 L50 44 L40 44 Z" fill="#ffffff" opacity="0.25" />
+        <path d="M65 32 L75 32 L70 44 L60 44 Z" fill="#ffffff" opacity="0.25" />
+      </g>
+      
+      <!-- Hinge Bolt -->
+      <circle cx="15" cy="45" r="3.5" fill="#f43f5e" />
+      <circle cx="15" cy="45" r="1.5" fill="#ffffff" />
+    </svg>
+    
+    <!-- Morphing Details Card (Glassmorphic) -->
+    <div id="movie-detail-box" class="movie-detail-glass" style="width: 100%; display: none; opacity: 0; transform: scale(0.85); box-sizing: border-box;">
+      <h4 id="anim-movie-title" style="font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; margin: 0 0 4px 0; color: #fda4af; text-shadow: 0 0 12px rgba(244,63,94,0.5);"></h4>
+      <p id="anim-movie-meta" style="font-size: 0.76rem; color: #a78bfa; margin: 0 0 15px 0; letter-spacing: 0.8px; text-transform: uppercase; font-weight: 500;"></p>
+      
+      <!-- Unsplash Poster Image Frame -->
+      <div class="movie-poster-frame" style="width: 130px; height: 180px; margin: 0 auto 16px; border-radius: 14px; overflow: hidden; border: 2px solid rgba(244,63,94,0.35); box-shadow: 0 10px 25px rgba(0,0,0,0.6); position: relative;">
+        <img id="detail-movie-poster" src="" alt="Movie Poster" onclick="openLightbox(this.src)" style="width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'" />
+      </div>
+
+      <!-- Main Lead Roles (Cast) Block -->
+      <div id="movie-cast-wrap" style="margin: -6px auto 14px; text-align: center; max-width: 280px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); padding: 6px 10px; border-radius: 8px;">
+        <p style="font-size: 0.65rem; text-transform: uppercase; color: #a78bfa; font-weight: bold; letter-spacing: 1.2px; margin: 0 0 3px 0;">⭐ Main Lead Roles ⭐</p>
+        <p id="anim-movie-cast" style="font-size: 0.8rem; color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 500; margin: 0; text-shadow: 0 0 8px rgba(255,255,255,0.2);"></p>
+      </div>
+
+      <!-- Story Outline Block -->
+      <div class="movie-outline-wrap" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.06); padding: 12px 16px; border-radius: 12px; margin-bottom: 18px; text-align: left;">
+        <p style="font-size: 0.65rem; text-transform: uppercase; color: #f43f5e; font-weight: bold; letter-spacing: 1.2px; margin: 0 0 6px 0;">Story Outline</p>
+        <p id="detail-movie-outline" style="font-size: 0.8rem; color: rgba(245, 240, 255, 0.88); line-height: 1.6; margin: 0; font-family: 'DM Sans', sans-serif; font-weight: 300; text-align: justify;"></p>
+      </div>
+
+      <!-- Close Button -->
+      <div class="gb-btn-wrap" style="width: 100%;">
+        <button class="gb-btn gb-btn--rose" onclick="closeMovieAnimation()" style="width: 100%;">
+          <span class="gb-btn__face" style="padding: 10px 24px; width: 100%; display: flex; justify-content: center; font-size: 0.8rem;"><span class="gb-btn__icon">✕</span><span>Close Details</span></span>
+          <span class="gb-btn__ripple"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SHEET 2: VIBE PICKER
+══════════════════════════════════════ -->
+<div class="sheet-bg" id="sh-vibes" onclick="bgClose(event,'sh-vibes')">
+  <div class="sheet">
+    <div class="sheet-notch"></div>
+    <button class="sheet-x" onclick="closeSheet('sh-vibes')">✕</button>
+    <div class="sh-header">
+      <h3 class="sh-title">Pick Your Vibe 🎶</h3>
+      <p class="sh-sub">Use headphones • Close your eyes • Feel it 🎧</p>
+    </div>
+    <div class="vibe-stack">
+      <div class="vrow" style="--c1:#9f1239;--c2:#f43f5e;--sh:rgba(244,63,94,.4)" onclick="playVibe(this,'jfKfPfyJRdk')">
+        <span class="vrow-ico">🎵</span>
+        <div class="vrow-info"><div class="vrow-name">Vibe</div><div class="vrow-songs">Vaatakaruvaadu · Why This Kolaveri · Arabic Kuthu · Aura 10/10</div></div>
+        <span class="vrow-play">▶</span>
+      </div>
+      <div class="vrow" style="--c1:#164e63;--c2:#06b6d4;--sh:rgba(6,182,212,.4)" onclick="playVibe(this,'dQw4w9WgXcQ')">
+        <span class="vrow-ico">👯</span>
+        <div class="vrow-info"><div class="vrow-name">Friends</div><div class="vrow-songs">Nanbiye - Teddy · Kadhaippoma</div></div>
+        <span class="vrow-play">▶</span>
+      </div>
+      <div class="vrow" style="--c1:#581c87;--c2:#a78bfa;--sh:rgba(167,139,250,.4)" onclick="playVibe(this,'1Bix44C1EzY')">
+        <span class="vrow-ico">💗</span>
+        <div class="vrow-info"><div class="vrow-name">Romantic</div><div class="vrow-songs">Hey Minnale · Selfie Pulla · Athi</div></div>
+        <span class="vrow-play">▶</span>
+      </div>
+      <div class="vrow" style="--c1:#78350f;--c2:#f59e0b;--sh:rgba(245,158,11,.4)" onclick="playVibe(this,'tgbNymZ7vqY')">
+        <span class="vrow-ico">😄</span>
+        <div class="vrow-info"><div class="vrow-name">Happiness</div><div class="vrow-songs">Pala Palakura · Jana Nayagan · Aiyo Kadhaley</div></div>
+        <span class="vrow-play">▶</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SHEET 3: MOVIE
+══════════════════════════════════════ -->
+<div class="sheet-bg" id="sh-movie" onclick="bgClose(event,'sh-movie')">
+  <div class="sheet sheet--tall">
+    <div class="sheet-notch"></div>
+    <button class="sheet-x" onclick="closeSheet('sh-movie')">✕</button>
+
+    <div class="movie-hero">
+      <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&q=80" class="movie-img" alt="With Love 2026" />
+      <div class="movie-shade"></div>
+      <div class="movie-label">🎬 With Love <em>(2026)</em></div>
+    </div>
+
+    <p class="movie-cast">Cast: <strong>Abishan Jeevinth &amp; Anaswara Rajan</strong></p>
+
+    <div class="mblock mblock--purple">
+      <div class="mblock-icon">📖</div>
+      <div class="mblock-body">
+        <div class="mblock-label">Outline</div>
+        <p>A heartwarming romance following two young souls navigating love, friendship, and self-discovery in modern times.</p>
+      </div>
+    </div>
+    <div class="mblock mblock--rose">
+      <div class="mblock-icon">⭐</div>
+      <div class="mblock-body">
+        <div class="mblock-label">Review</div>
+        <p>Stellar performances, authentic chemistry — a must-watch for romance lovers!</p>
+      </div>
+    </div>
+    <div class="mblock mblock--blue">
+      <div class="mblock-icon">🌐</div>
+      <div class="mblock-body">
+        <div class="mblock-label">How to Watch from Uzbekistan</div>
+        <ol>
+          <li>Download NordVPN / Surfshark</li>
+          <li>Connect to an India server</li>
+          <li>Open Netflix / Amazon Prime</li>
+          <li>Enable English subtitles &amp; enjoy! 🎉</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     POETRY MODAL
+══════════════════════════════════════ -->
+<div class="poetry-bg" id="poetry-bg" onclick="closePoetry()">
+  <div class="poetry-card" id="poetry-card">
+    <button class="poetry-close" onclick="closePoetry()">✕</button>
+    <div class="poetry-rose" id="poetry-icon">🌹</div>
+    <p class="poetry-for">A poem for you, Chen Wa Qin</p>
+    <div class="poetry-divider"><span>✦ ✦ ✦</span></div>
+    <div class="poetry-lines" id="poetry-lines"></div>
+    <p class="poetry-footer">— with love &amp; admiration 💕</p>
+  </div>
+</div>
+
+
+<!-- YT MODAL -->
+<div class="yt-modal" id="yt-modal" onclick="ytBgClose(event)">
+  <button class="yt-x" onclick="ytClose()">✕</button>
+  <div class="yt-inner" id="yt-inner">
+    <iframe id="yt-frame" src="" allow="autoplay;encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ANIMAL TRANSITION OVERLAY -->
+<div id="animal-transition-overlay">
+  <div class="animal-trail"></div>
+  <div class="animal-character" id="animal-character">
+    <!-- 3D GINGER CAT (SVG) -->
+    <svg id="cat-svg" class="animal-vector" viewBox="0 0 100 100" style="display: none;">
+      <defs>
+        <!-- 3D Clay Render Gradients -->
+        <radialGradient id="catHead3D" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#fffbeb" />
+          <stop offset="30%" stop-color="#fde047" />
+          <stop offset="75%" stop-color="#f59e0b" />
+          <stop offset="100%" stop-color="#b45309" />
+        </radialGradient>
+        <radialGradient id="catBody3D" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#fef3c7" />
+          <stop offset="40%" stop-color="#fbbf24" />
+          <stop offset="80%" stop-color="#ea580c" />
+          <stop offset="100%" stop-color="#9a3412" />
+        </radialGradient>
+        <radialGradient id="catCheek3D" cx="45%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="80%" stop-color="#fcfcfc" />
+          <stop offset="100%" stop-color="#ffe4e6" /> <!-- Pink Blush Edge -->
+        </radialGradient>
+        <radialGradient id="catBell3D" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#fef08a" />
+          <stop offset="60%" stop-color="#facc15" />
+          <stop offset="100%" stop-color="#a16207" />
+        </radialGradient>
+        <linearGradient id="catCollar3D" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#0284c7" />
+          <stop offset="50%" stop-color="#38bdf8" />
+          <stop offset="100%" stop-color="#0369a1" />
+        </linearGradient>
+      </defs>
+
+      <!-- Upright Stand Tail (Thick Clay Style) -->
+      <path class="cat-tail" d="M28 65 Q18 35 26 22 T30 8" fill="none" stroke="url(#catBody3D)" stroke-width="11" stroke-linecap="round" />
+
+      <!-- Back Leg & Stubby Feet -->
+      <ellipse cx="32" cy="79" rx="6" ry="11" fill="#ffffff" stroke="#e1e1e1" stroke-width="0.5" />
+      
+      <!-- Chubby Body -->
+      <ellipse cx="44" cy="62" rx="23" ry="19" fill="url(#catBody3D)" />
+
+      <!-- White Belly Patch -->
+      <ellipse cx="40" cy="68" rx="14" ry="10" fill="#ffffff" opacity="0.9" />
+
+      <!-- Orange Stripes on Back -->
+      <path d="M36 50 Q32 50 35 60" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" />
+      <path d="M43 47 Q39 48 42 58" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" />
+
+      <!-- Front Left Paw -->
+      <ellipse class="cat-paw paw-front-left" cx="38" cy="82" rx="7.5" ry="9" fill="#ffffff" stroke="#e1e1e1" stroke-width="0.5" />
+      
+      <!-- Blue Collar -->
+      <ellipse cx="58" cy="57" rx="13" ry="4.5" fill="url(#catCollar3D)" transform="rotate(-15, 58, 57)" />
+      
+      <!-- Gold Bell with Clapper -->
+      <circle cx="53" cy="61" r="5" fill="url(#catBell3D)" />
+      <circle cx="53" cy="63.5" r="1.2" fill="#451a03" />
+
+      <!-- Head (Perfect Clay Sphere) -->
+      <circle cx="64" cy="43" r="18" fill="url(#catHead3D)" />
+
+      <!-- Chubby Blushing White Cheeks -->
+      <ellipse cx="57.5" cy="49" rx="8" ry="6" fill="url(#catCheek3D)" />
+      <ellipse cx="70.5" cy="49" rx="8" ry="6" fill="url(#catCheek3D)" />
+      <!-- Muzzle center -->
+      <circle cx="64" cy="48" r="4" fill="#ffffff" />
+
+      <!-- Orange Face Stripes -->
+      <path d="M58 28 Q59 34 58 37" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M64 26 Q64 32 64 35" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M70 28 Q69 34 70 37" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" />
+
+      <!-- Ears (Clay-curved, pink inside) -->
+      <path d="M49 35 L44 19 Q52 23 58 27 Z" fill="url(#catHead3D)" />
+      <path d="M51 32 L47 22 Q52 25 56 27 Z" fill="#fecdd3" />
+      
+      <path d="M79 35 L84 19 Q76 23 70 27 Z" fill="url(#catHead3D)" />
+      <path d="M77 32 L81 22 Q74 25 72 27 Z" fill="#fecdd3" />
+
+      <!-- Cute Closed Happy Eyes -->
+      <path d="M52 40 Q57.5 35 60 40" fill="none" stroke="#451a03" stroke-width="2.2" stroke-linecap="round" />
+      <path d="M68 40 Q70.5 35 76 40" fill="none" stroke="#451a03" stroke-width="2.2" stroke-linecap="round" />
+
+      <!-- Cute Pink Nose -->
+      <ellipse cx="64" cy="44.5" rx="2" ry="1.5" fill="#fb7185" />
+
+      <!-- Cute Dark Whiskers -->
+      <line x1="49" y1="47" x2="39" y2="45" stroke="#78350f" stroke-width="1.8" stroke-linecap="round" />
+      <line x1="49" y1="51" x2="38" y2="52" stroke="#78350f" stroke-width="1.8" stroke-linecap="round" />
+      <line x1="79" y1="47" x2="89" y2="45" stroke="#78350f" stroke-width="1.8" stroke-linecap="round" />
+      <line x1="79" y1="51" x2="90" y2="52" stroke="#78350f" stroke-width="1.8" stroke-linecap="round" />
+
+      <!-- Front Right Paw (Active strike element) -->
+      <ellipse class="cat-paw paw-front-right" cx="57" cy="82" rx="7.8" ry="9" fill="#ffffff" stroke="#e1e1e1" stroke-width="0.5" />
+    </svg>
+
+    <!-- 3D GREEN PARROT (SVG) -->
+    <svg id="parrot-svg" class="animal-vector" viewBox="0 0 100 100" style="display: none;">
+      <defs>
+        <!-- 3D Parrot Gradients -->
+        <radialGradient id="parrotHeadGreen3D" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#bef264" /> <!-- Bright lime highlight -->
+          <stop offset="60%" stop-color="#22c55e" /> <!-- Parrot green midtone -->
+          <stop offset="100%" stop-color="#15803d" /> <!-- Forest green shadow -->
+        </radialGradient>
+        <radialGradient id="parrotBodyGreen3D" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#a3e635" /> <!-- Light green -->
+          <stop offset="70%" stop-color="#16a34a" /> <!-- Vivid parrot green midtone -->
+          <stop offset="100%" stop-color="#14532d" /> <!-- Forest green shadow -->
+        </radialGradient>
+        <radialGradient id="parrotChestYellow3D" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#fef08a" /> <!-- Golden yellow highlight -->
+          <stop offset="70%" stop-color="#facc15" /> <!-- Pure yellow chest -->
+          <stop offset="100%" stop-color="#d97706" /> <!-- Golden shadow -->
+        </radialGradient>
+        <radialGradient id="budgieEyeWhite" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="70%" stop-color="#f3f4f6" />
+          <stop offset="100%" stop-color="#d1d5db" />
+        </radialGradient>
+        <linearGradient id="parrotBeakGold3D" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fef9c3" /> <!-- Pale gold highlight -->
+          <stop offset="50%" stop-color="#eab308" /> <!-- Shiny yellow beak -->
+          <stop offset="100%" stop-color="#ca8a04" /> <!-- Warm gold shadow -->
+        </linearGradient>
+        <linearGradient id="parrotWingBlue3D" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#67e8f9" /> <!-- Light cyan -->
+          <stop offset="65%" stop-color="#06b6d4" /> <!-- Vibrant cyan blue wing -->
+          <stop offset="100%" stop-color="#0891b2" /> <!-- Deep blue shadow -->
+        </linearGradient>
+      </defs>
+
+      <!-- Tail Feathers (Layered 3D Macaw Style!) -->
+      <g class="parrot-tail">
+        <path d="M42 78 L26 98 Q38 92 46 78 Z" fill="#ef4444" />
+        <path d="M58 78 L74 98 Q62 92 54 78 Z" fill="#3b82f6" />
+        <path d="M50 76 L50 102 Q48 94 50 76 Z" fill="#eab308" />
+      </g>
+
+      <!-- Fluffy Green Body -->
+      <circle cx="50" cy="65" r="22" fill="url(#parrotBodyGreen3D)" />
+      
+      <!-- Fluffy Chest Accents -->
+      <ellipse cx="50" cy="68" rx="14" ry="12" fill="url(#parrotChestYellow3D)" opacity="0.95" />
+
+      <!-- Feet (Cute Orange Claws) -->
+      <rect x="41" y="80" width="4" height="8" rx="2" fill="#f97316" />
+      <circle cx="41" cy="88" r="2.5" fill="#f97316" />
+      <circle cx="45" cy="88" r="2.5" fill="#f97316" />
+      
+      <rect x="55" y="80" width="4" height="8" rx="2" fill="#f97316" />
+      <circle cx="55" cy="88" r="2.5" fill="#f97316" />
+      <circle cx="59" cy="88" r="2.5" fill="#f97316" />
+
+      <!-- Head (Vibrant Green parakeet Sphere) -->
+      <circle cx="50" cy="35" r="18" fill="url(#parrotHeadGreen3D)" />
+
+      <!-- Crest Feathers -->
+      <path d="M50 17 C42 6 36 10 46 16 Z" fill="url(#parrotWingBlue3D)" />
+      <path d="M52 17 C60 6 66 10 56 16 Z" fill="#facc15" />
+
+      <!-- Cute Blushing Pink Cheeks -->
+      <circle cx="36" cy="40" r="3.5" fill="#fda4af" opacity="0.8" />
+      <circle cx="64" cy="40" r="3.5" fill="#fda4af" opacity="0.8" />
+
+      <!-- Bold Curved Downward Golden Beak (100% Parrot Style!) -->
+      <path d="M44 33 Q50 31 56 33 Q53 49 50 56 Q47 49 44 33 Z" fill="url(#parrotBeakGold3D)" />
+      <path d="M46 38 Q50 48 54 38 Z" fill="#ea580c" />
+      <path d="M47 35 Q50 33 53 35 Q51 45 50 52 Z" fill="#ffffff" opacity="0.25" />
+
+      <!-- Large Open Curious Eyes with White ring (Vibrant and Super Cute!) -->
+      <g>
+        <circle cx="36" cy="31" r="5" fill="url(#budgieEyeWhite)" />
+        <circle cx="36" cy="31" r="3.2" fill="#1e293b" />
+        <circle cx="36" cy="31" r="1.8" fill="#000000" />
+        <circle cx="34.8" cy="29.8" r="1.0" fill="#ffffff" />
+      </g>
+      <g>
+        <circle cx="64" cy="31" r="5" fill="url(#budgieEyeWhite)" />
+        <circle cx="64" cy="31" r="3.2" fill="#1e293b" />
+        <circle cx="64" cy="31" r="1.8" fill="#000000" />
+        <circle cx="62.8" cy="29.8" r="1.0" fill="#ffffff" />
+      </g>
+
+      <!-- Cute Expressive Eyebrows -->
+      <path d="M32 25 Q36 22 41 26" fill="none" stroke="#14532d" stroke-width="2.2" stroke-linecap="round" />
+      <path d="M59 26 Q64 22 68 25" fill="none" stroke="#14532d" stroke-width="2.2" stroke-linecap="round" />
+
+      <!-- Layered Sky Blue Wings -->
+      <g class="parrot-wing">
+        <path d="M72 52 C84 56 88 72 78 82 C72 86 66 76 72 52 Z" fill="#0284c7" />
+        <path d="M74 56 Q86 62 82 78 Q74 80 74 56" fill="url(#parrotWingBlue3D)" />
+        <path d="M73 58 Q82 64 78 74 Q73 75 73 58" fill="#facc15" />
+      </g>
+      <g class="parrot-wing-left">
+        <path d="M28 52 C16 56 12 72 22 82 C28 86 34 76 28 52 Z" fill="#0284c7" />
+        <path d="M26 56 Q14 62 18 78 Q26 80 26 56" fill="url(#parrotWingBlue3D)" />
+      </g>
+    </svg>
+
+    <div class="animal-bubble" id="animal-bubble">Meow! Follow me! 🐾</div>
+    <div class="animal-paw-trail" id="animal-paw-trail"></div>
+  </div>
+</div>
+
+<!-- FULL SCREEN POSTER LIGHTBOX -->
+<div id="poster-lightbox" onclick="closeLightbox()" style="position: fixed; inset: 0; background: rgba(5, 2, 10, 0.95); z-index: 20000; display: none; align-items: center; justify-content: center; opacity: 0; pointer-events: none; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); transition: all 0.4s ease;">
+  <button class="lightbox-close" onclick="closeLightbox()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #fff; font-size: 1.5rem; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 20001; transition: background 0.3s, transform 0.3s;" onmouseover="this.style.background='rgba(244,63,94,0.2)'; this.style.transform='rotate(90deg)'" onmouseleave="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='rotate(0)'">✕</button>
+  <div style="max-width: 90%; max-height: 90%; display: flex; align-items: center; justify-content: center;">
+    <img id="lightbox-img" src="" alt="Full Screen Poster" style="max-width: 100%; max-height: 90vh; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.15); object-fit: contain; transform: scale(0.9); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.04) saturate(1.03) brightness(1.02);" />
+  </div>
+</div>
+
+<!-- FULL SCREEN PROFILE PIC LIGHTBOX & ROMANTIC CANON REVEAL -->
+<div id="profile-lightbox" onclick="closeProfileLightbox()" style="position: fixed; inset: 0; background: rgba(4, 0, 10, 0.97); z-index: 30000; display: none; align-items: center; justify-content: center; flex-direction: column; opacity: 0; pointer-events: none; backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);">
+  <!-- Symmetrical Glows -->
+  <div class="glow-orb go-a" style="width: 250px; height: 250px; background: rgba(244,63,94,0.22); top: 10%; filter: blur(90px);"></div>
+  <div class="glow-orb go-b" style="width: 250px; height: 250px; background: rgba(139,92,246,0.22); bottom: 10%; filter: blur(90px);"></div>
+
+  <button class="lightbox-close" onclick="closeProfileLightbox()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #fff; font-size: 1.5rem; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 30001; transition: background 0.3s, transform 0.3s;" onmouseover="this.style.background='rgba(244,63,94,0.2)'; this.style.transform='rotate(90deg)'" onmouseleave="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='rotate(0)'">✕</button>
+  
+  <!-- Polaroid-style Framed 4K-8K Profile Photo -->
+  <div onclick="triggerProfileBirthdayReveal(event)" ondblclick="closeProfileLightbox()" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 12px 12px 36px; border-radius: 20px; box-shadow: 0 30px 70px rgba(0,0,0,0.8), 0 0 40px rgba(244,63,94,0.15); max-width: 90%; text-align: center; transform: scale(0.9); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; cursor: pointer;">
+    <div style="position: absolute; top: -12px; left: -12px; font-size: 1.5rem; animation: cornerHFloat 2s ease-in-out infinite alternate;">🌸</div>
+    <div style="position: absolute; top: -12px; right: -12px; font-size: 1.5rem; animation: cornerHFloat 2s ease-in-out infinite alternate; animation-delay: 0.5s;">💝</div>
+    <img id="profile-lightbox-img" src="" alt="Chen Wa Qin 4K" style="max-height: 55vh; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); object-fit: contain; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.08) saturate(1.06) brightness(1.04) drop-shadow(0 0 12px rgba(244,63,94,0.25));" />
+  </div>
+
+  <!-- Birthday Text Reveal -->
+  <div id="lightbox-birthday-text" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 700; font-style: italic; background: linear-gradient(135deg, #fda4af, #f43f5e, #c084fc, #facc15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-align: center; margin-top: 24px; text-shadow: 0 0 20px rgba(244,63,94,0.5); opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);">
+    Happy Birthday Chen Wa Qin 🌸
+  </div>
+</div>
+
+<script src="script.js?v=25"></script>
+</body>
+</html>
