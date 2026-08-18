@@ -717,8 +717,9 @@
       <circle cx="15" cy="45" r="1.5" fill="#ffffff" />
     </svg>
     
-    <!-- Morphing Details Card (Glassmorphic) -->
-    <div id="movie-detail-box" class="movie-detail-glass" style="width: 100%; display: none; opacity: 0; transform: scale(0.85); box-sizing: border-box;">
+    <div id="movie-detail-box" class="movie-detail-glass" style="width: 100%; display: none; opacity: 0; transform: scale(0.85); box-sizing: border-box; position: relative;">
+      <!-- Top-Right Close Button -->
+      <button class="sheet-x" onclick="closeMovieAnimation()" style="position: absolute; top: 12px; right: 12px; z-index: 100;">✕</button>
       <h4 id="anim-movie-title" style="font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; margin: 0 0 4px 0; color: #fda4af; text-shadow: 0 0 12px rgba(244,63,94,0.5);"></h4>
       <p id="anim-movie-meta" style="font-size: 0.76rem; color: #a78bfa; margin: 0 0 15px 0; letter-spacing: 0.8px; text-transform: uppercase; font-weight: 500;"></p>
       
