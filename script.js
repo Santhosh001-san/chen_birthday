@@ -1481,7 +1481,7 @@ function openProfileLightbox() {
     const canvas = document.getElementById('stars');
     if (canvas) canvas.style.zIndex = '31000';
     
-    img.src = "media__1779949997571.jpg";
+    img.src = "chen_profile.jpg";
     
     isBirthdayRevealed = false;
     if (txt) {
